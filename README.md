@@ -6,11 +6,15 @@
 
 ## Business Problem
 
-The role assumed here is of a Data Scientist working for a Neocivil Realtors. The Agency is in the business of helping homeowners buy and/or sell houses. The Agency and the homeowners reside in King County in the US State of Washington. The Agency has provided me with a dataset of house sales in King County. The task here is to model the real estate housing prices and use the model to accurately predict the housing prices based on a number of features provided within the dataset. The expectation is that, once completed, the model can be used by real estate agency, operating in the King County, as a tool in selecting properties for investment.
+The role assumed here is of a Data Scientist working for Neocivil Realtors. The Agency is in the business of helping homeowners buy and/or sell houses. The Agency and the homeowners reside in King County in the US State of Washington. The Agency has provided me with a dataset of house sales in King County. The task here is to model the real estate housing prices and use the model to accurately predict the housing prices based on a number of features provided within the dataset. The expectation is that, once completed, the model can be used by them as a tool in selecting properties for investment in King County.
 
-Question 1: Which features are most highly correlated with price?
-Question 2: Which features have the strongest correlations with other predictor variables?
-Question 3: What combinations of features is the best fit, in terms of predictive power, for a multiple regression model to predict house prices?
+### Analysis Questions
+
+This analysis will seek to answer three questions about the data:
+
+*Question 1: Which features are most highly correlated with price?
+*Question 2: Which features have the strongest correlations with other predictor variables?
+*Question 3: What combinations of features is the best fit, in terms of predictive power, for a multiple regression model to predict house prices?
 
 ## Data Understanding
 
@@ -40,7 +44,7 @@ The dataset contains 21 columns. One is of the prices of the houses, which is ou
 * **sqft_living15** - The square footage of interior housing living space for the nearest 15 neighbors
 * **sqft_lot15** - The square footage of the land lots of the nearest 15 neighbors
 
-## Linear Regression Analysis Results
+## Final Linear Regression Analysis Results
 
 Overall the model performed marginally better than the baseline model. Comparing the Mean Absolute Error with the baseline model, we were were off by about $165,386 rather than $173,824 in a given prediction which was a slight improvement. The model explained 54.7% rather than 49.3% of the baseline model in the variance in price. 
 
@@ -72,8 +76,6 @@ This was easily obtained by using the ~.corr()` method.
 A correlation matrix was created to visualize the correlation between the independent variables. One of the assumptions of a multiple linear regression model, is that there is no multicollinearity among the independent variables (i.e., they can't be predicted by other independent variables with high accuracy) hence the reason to create the matrix. 
 
 ![Correlation Matrix](./images/Model3a.png)
-
-Additionally, I analyzed the ratings for all the movies by getting the frequency of each rating.
 
 To further investigate the issue of multicollinearity, I went ahead to calculate the Variation Inflation Factor. I used to a threshold of 5. Any feature that has a VIF of above is considered to be highly correlated. 
 
